@@ -10,7 +10,6 @@
 body{
     background-color: #7F7E7E;
     color: black;
-    margin: 20px;
 }
 body header{
     height: 150px;
@@ -92,6 +91,7 @@ nav ul li ul li a:hover{
 }
 main{
     height: 100%;
+    margin-left: 20px;
 }
 
 
