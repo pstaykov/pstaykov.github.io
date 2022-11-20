@@ -1,0 +1,102 @@
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color : whitesmoke;
+    margin: 0;
+    padding: 0;
+    font-size: large;
+}
+
+body{
+    background-color: #7F7E7E;
+    color: black;
+
+}
+body header{
+    height: 150px;
+}
+footer{
+    font-size: small;
+}
+
+.box-1{
+    background-color:black;
+    padding: 50px;
+    height: 100px;
+    width: 100%;
+    margin-bottom: 0px;
+    margin-top: 269px;
+    color: white;
+}
+
+nav ul{
+    float: left;
+}
+
+
+nav{
+    width: 100%;
+    height: 130px;
+    background-color: black;
+    color: white;
+}
+
+nav img{
+    float: left;
+    height: 75px;
+    border-radius: 12px;
+}
+nav p{
+    font-size: 24px; 
+    line-height: 55px;
+    float: left;
+    padding: 0px 20px;
+}
+
+
+
+nav ul li{
+    float: left;
+    list-style: none;
+    position: relative;
+}
+nav ul li a{
+    display: block;
+    font-size: 14px; 
+    padding: 24px 14px;
+    text-decoration: none;
+}
+nav ul li ul {
+    display: none;
+    position:absolute ;
+    background-color: orange;
+    padding: 7px;
+    border-radius: 0px 0px 6px 6px;
+    color: black;
+}
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li a{
+    padding: 8px 14px;
+}
+nav ul li ul li {
+    width: 180px;
+    border-radius: 4px;
+    color: black;
+}
+nav ul li ul li a:hover{
+    padding: 8px 14px;
+    background-color: aquamarine;
+}
+main{
+    height: 100%;
+}
+
+
+.piano_pic{
+    height: 400px;
+    border-radius: 20px;
+}
+
