@@ -104,4 +104,8 @@ footer {
     width: 100%;
 }
 
+main h1:first-of-type {
+    margin-top: 40px;
+}
+
 
