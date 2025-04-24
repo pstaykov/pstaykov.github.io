@@ -53,3 +53,20 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
+const imageNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]; //images
+
+const galleryContainer = document.getElementById('gallery');
+
+imageNumbers.forEach(num => {
+  const col = document.createElement('div');
+  col.className = 'col-md-6 col-lg-4 mb-5';
+
+  col.innerHTML = `
+    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+      <img class="img-fluid" src="photos/street/${num}.JPG" alt="streetphotography" />
+    </div>
+  `;
+
+  galleryContainer.appendChild(col);
+});
+
