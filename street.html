@@ -61,54 +61,26 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Portfolio Grid Items-->
-                <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                            <img class="img-fluid" src="photos/street/1.JPG" alt="streetphotography" />
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                            <img class="img-fluid" src="photos/street/2.JPG" alt="streetphotography" />
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                            <img class="img-fluid" src="photos/street/3.JPG" alt="streetphotography" />
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                            <img class="img-fluid" src="photos/street/4.JPG" alt="streetphotography" />
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                            <img class="img-fluid" src="photos/street/5.JPG" alt="streetphotography" />
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                            <img class="img-fluid" src="photos/street/6.JPG" alt="streetphotography" />
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                            <img class="img-fluid" src="photos/street/7.JPG" alt="streetphotography" />
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                            <img class="img-fluid" src="photos/street/8.JPG" alt="streetphotography" />
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                            <img class="img-fluid" src="photos/street/9.JPG" alt="streetphotography" />
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <div class="row justify-content-center"></div>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                      const imageNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]; // your list of image numbers
+                      const galleryContainer = document.getElementById('gallery');
+                  
+                      imageNumbers.forEach(num => {
+                        const col = document.createElement('div');
+                        col.className = 'col-md-6 col-lg-4 mb-5';
+                  
+                        col.innerHTML = `
+                          <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                            <img class="img-fluid" src="photos/street/${num}.JPG" alt="streetphotography" />
+                          </div>
+                        `;
+                  
+                        galleryContainer.appendChild(col);
+                      });
+                    });
+                </script>
         </section>
         <!-- Footer-->
         <footer class="footer text-center">
