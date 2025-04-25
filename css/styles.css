@@ -10935,11 +10935,11 @@ html {
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
     color: #fff;
-    background: #1abc9c;
+    background: #6c7a89;
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
     color: #fff;
-    background: #1abc9c;
+    background: #6c7a89;
   }
   #mainNav.navbar-shrink {
     padding-top: 0.5rem;
@@ -11009,7 +11009,7 @@ html {
   left: 0;
   transition: all 0.2s ease-in-out;
   opacity: 0;
-  background-color: rgba(26, 188, 156, 0.9);
+  background-color: #6c7a89;
 }
 .portfolio .portfolio-item .portfolio-item-caption:hover {
   opacity: 1;
