@@ -1,14 +1,14 @@
 from PIL import Image
 import os
 
-input_folder = 'otherhi'
-output_folder = 'other'
+input_folder = 'D:\sites\pstaykov.github.io\photos\shootshi'
+output_folder = 'D:\sites\pstaykov.github.io\photos\shoots'
 
 # Create output folder if it doesn't exist
 os.makedirs(output_folder, exist_ok=True)
 
 # Settings
-resize_width = 1024
+resize_width = 1920
 quality = 70  # JPEG quality (0–100)
 
 for filename in os.listdir(input_folder):
