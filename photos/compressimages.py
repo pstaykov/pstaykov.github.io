@@ -1,8 +1,8 @@
 from PIL import Image
 import os
 
-input_folder = 'D:\sites\pstaykov.github.io\photos\shootshi'
-output_folder = 'D:\sites\pstaykov.github.io\photos\shoots'
+input_folder = 'D:\sites\pstaykov.github.io\photos\streethi'
+output_folder = 'D:\sites\pstaykov.github.io\photos\street'
 
 # Create output folder if it doesn't exist
 os.makedirs(output_folder, exist_ok=True)
