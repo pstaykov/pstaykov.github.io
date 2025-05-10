@@ -14,7 +14,7 @@ quality = 70  # JPEG quality (0–100)
 for filename in os.listdir(input_folder):
     if filename.lower().endswith(('.jpg', '.jpeg')):
         input_path = os.path.join(input_folder, filename)
-        output_path = os.path.join(output_folder, f'compressed-{filename}')
+        output_path = os.path.join(output_folder, f'compressed{filename}')
         
         with Image.open(input_path) as img:
             # Resize while maintaining aspect ratio
