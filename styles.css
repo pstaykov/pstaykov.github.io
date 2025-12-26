@@ -70,7 +70,7 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(15, 15, 15, 0.9);
+    background: rgba(15, 15, 15, 0.95);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
     z-index: 1000;
@@ -80,10 +80,11 @@ nav {
 nav .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 nav .logo {
@@ -93,6 +94,39 @@ nav .logo {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    z-index: 1001;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--accent-purple);
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 nav ul {
@@ -107,6 +141,7 @@ nav a {
     font-weight: 500;
     transition: all 0.3s;
     position: relative;
+    font-size: 0.9375rem;
 }
 
 nav a::after {
@@ -131,7 +166,7 @@ nav a:hover::after {
 /* Hero Section */
 .hero {
     margin-top: 80px;
-    padding: 8rem 2rem;
+    padding: 6rem 1.5rem;
     background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
     border-bottom: 1px solid var(--border);
     position: relative;
@@ -189,11 +224,13 @@ nav a:hover::after {
     font-size: 1.25rem;
     color: #9ca3af;
     margin-bottom: 2rem;
+    line-height: 1.7;
 }
 
 .hero .buttons {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .hero-skills h3 {
@@ -288,7 +325,7 @@ nav a:hover::after {
 
 /* Section Styles */
 section {
-    padding: 6rem 2rem;
+    padding: 4rem 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -412,6 +449,7 @@ section h2::after {
     gap: 1rem;
     margin-top: 1.5rem;
     position: relative;
+    flex-wrap: wrap;
 }
 
 .project-links a {
@@ -441,12 +479,14 @@ section h2::after {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 1.25rem;
-    padding: 2rem;
+    padding: 1.5rem;
+    -webkit-overflow-scrolling: touch;
 }
 
 .achievements-table {
     width: 100%;
     border-collapse: collapse;
+    min-width: 600px;
 }
 
 .achievements-table thead {
@@ -462,6 +502,7 @@ section h2::after {
     text-transform: uppercase;
     font-size: 0.875rem;
     letter-spacing: 0.5px;
+    white-space: nowrap;
 }
 
 .achievements-table td {
@@ -489,7 +530,7 @@ section h2::after {
 /* Experience Timeline */
 .timeline {
     position: relative;
-    padding-left: 2.5rem;
+    padding-left: 2rem;
 }
 
 .timeline::before {
@@ -505,13 +546,13 @@ section h2::after {
 
 .timeline-item {
     position: relative;
-    padding-bottom: 3rem;
+    padding-bottom: 2.5rem;
 }
 
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -2.625rem;
+    left: -2.125rem;
     top: 0.25rem;
     width: 1rem;
     height: 1rem;
@@ -521,9 +562,10 @@ section h2::after {
 }
 
 .timeline-item h3 {
-    font-size: 1.375rem;
+    font-size: 1.25rem;
     margin-bottom: 0.5rem;
     color: #f9fafb;
+    line-height: 1.4;
 }
 
 .timeline-item .meta {
@@ -531,6 +573,7 @@ section h2::after {
     font-size: 0.875rem;
     margin-bottom: 1rem;
     font-weight: 600;
+    line-height: 1.5;
 }
 
 .timeline-item ul {
@@ -542,6 +585,7 @@ section h2::after {
     padding-left: 1.75rem;
     position: relative;
     margin-bottom: 0.75rem;
+    line-height: 1.6;
 }
 
 .timeline-item li::before {
@@ -557,7 +601,7 @@ section h2::after {
     background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
     border: 1px solid var(--border);
     border-radius: 1.5rem;
-    padding: 4rem 3rem;
+    padding: 3rem 2rem;
     text-align: center;
 }
 
@@ -573,6 +617,7 @@ section h2::after {
     color: #9ca3af;
     margin-bottom: 2.5rem;
     font-size: 1.125rem;
+    line-height: 1.7;
 }
 
 .contact-links {
@@ -585,26 +630,88 @@ section h2::after {
 /* Footer */
 footer {
     text-align: center;
-    padding: 2.5rem;
+    padding: 2.5rem 1.5rem;
     color: #6b7280;
     border-top: 1px solid var(--border);
     margin-top: 4rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav .container {
-        flex-direction: column;
-        gap: 1rem;
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+    .hero .container {
+        gap: 3rem;
     }
 
-    nav ul {
-        gap: 1rem;
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    section {
+        padding: 4rem 1.5rem;
+    }
+
+    section h2 {
+        font-size: 2.25rem;
+        margin-bottom: 2.5rem;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    nav .container {
+        padding: 0 1rem;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    nav .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(15, 15, 15, 0.98);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        gap: 0;
+        padding: 1.5rem 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+
+    nav .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav .nav-menu li {
+        text-align: center;
+        padding: 0.75rem 0;
+    }
+
+    nav a {
+        font-size: 1.125rem;
+        display: block;
+        padding: 0.5rem;
+    }
+
+    nav a::after {
+        display: none;
+    }
+
+    .hero {
+        margin-top: 70px;
+        padding: 4rem 1rem;
     }
 
     .hero .container {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 2.5rem;
     }
 
     .hero h1 {
@@ -612,54 +719,223 @@ footer {
     }
 
     .hero p {
+        font-size: 1.0625rem;
+    }
+
+    .hero::before {
+        width: 400px;
+        height: 400px;
+        right: -30%;
+    }
+
+    .hero-skills h3 {
         font-size: 1rem;
     }
 
+    section {
+        padding: 3rem 1rem;
+    }
+
     section h2 {
-        font-size: 2rem;
+        font-size: 1.875rem;
+        margin-bottom: 2rem;
     }
 
     .projects-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .project-card {
+        padding: 1.5rem;
     }
 
     .achievements-table-wrapper {
         padding: 1rem;
+        margin: 0 -1rem;
+        border-radius: 0.75rem;
     }
 
     .achievements-table th,
     .achievements-table td {
-        padding: 0.75rem 0.5rem;
-        font-size: 0.875rem;
+        padding: 1rem 0.75rem;
+        font-size: 0.8125rem;
     }
 
     .timeline {
         padding-left: 1.5rem;
     }
 
+    .timeline-item::before {
+        left: -1.625rem;
+        width: 0.875rem;
+        height: 0.875rem;
+    }
+
+    .timeline-item h3 {
+        font-size: 1.125rem;
+    }
+
     .contact {
         padding: 2.5rem 1.5rem;
     }
+
+    .contact p {
+        font-size: 1rem;
+    }
 }
 
+/* Small Mobile Responsive */
 @media (max-width: 480px) {
-    nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
+    nav .logo {
+        font-size: 1.125rem;
+    }
+
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.875rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
     }
 
     .hero .buttons {
         flex-direction: column;
+        width: 100%;
     }
 
     .btn {
         width: 100%;
         text-align: center;
+        padding: 0.875rem 1.25rem;
     }
 
     .hero::before {
-        width: 400px;
-        height: 400px;
+        width: 300px;
+        height: 300px;
+        top: -30%;
+    }
+
+    .skill-tag {
+        padding: 0.5rem 1rem;
+        font-size: 0.8125rem;
+    }
+
+    section {
+        padding: 2.5rem 1rem;
+    }
+
+    section h2 {
+        font-size: 1.625rem;
+        margin-bottom: 1.75rem;
+    }
+
+    section h2::after {
+        width: 60px;
+        height: 3px;
+    }
+
+    .project-card {
+        padding: 1.25rem;
+    }
+
+    .project-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .project-card .project-type {
+        font-size: 0.8125rem;
+    }
+
+    .tech-badge {
+        padding: 0.3125rem 0.75rem;
+        font-size: 0.6875rem;
+    }
+
+    .achievements-table {
+        min-width: 500px;
+    }
+
+    .achievements-table th,
+    .achievements-table td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    .timeline {
+        padding-left: 1.25rem;
+    }
+
+    .timeline::before {
+        width: 2px;
+    }
+
+    .timeline-item {
+        padding-bottom: 2rem;
+    }
+
+    .timeline-item::before {
+        left: -1.4375rem;
+        width: 0.75rem;
+        height: 0.75rem;
+    }
+
+    .timeline-item h3 {
+        font-size: 1.0625rem;
+    }
+
+    .timeline-item .meta {
+        font-size: 0.8125rem;
+    }
+
+    .timeline-item li {
+        padding-left: 1.5rem;
+        font-size: 0.9375rem;
+    }
+
+    .contact {
+        padding: 2rem 1rem;
+    }
+
+    .contact h2 {
+        font-size: 1.625rem;
+    }
+
+    .contact p {
+        font-size: 0.9375rem;
+        margin-bottom: 2rem;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .contact-links .btn {
+        width: 100%;
+    }
+
+    footer {
+        padding: 2rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* Extra Small Screens */
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 1.625rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    .achievements-table {
+        min-width: 450px;
     }
 }
